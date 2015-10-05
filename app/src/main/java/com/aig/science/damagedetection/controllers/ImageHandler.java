@@ -30,6 +30,12 @@ import java.util.Arrays;
 
 /**
  * http://developer.android.com/training/displaying-bitmaps/process-bitmap.html
+ * //http://developer.android.com/training/displaying-bitmaps/load-bitmap.html
+ * http://stackoverflow.com/questions/541966/lazy-load-of-images-in-listview/3068012#3068012
+ * http://android-developers.blogspot.com/2010/07/multithreading-for-performance.html
+ * 
+ * http://androidexample.com/Download_Images_From_Web_And_Lazy_Load_In_ListView_-_Android_Example/index.php?view=article_discription&aid=112&aaid=134
+ * 
  */
 
 public class MainActivity extends AppCompatActivity {

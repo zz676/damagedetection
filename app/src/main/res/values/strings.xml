@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Damage Detection</string>
+    <string name="home_screen_actionbar_title">Home Screen</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="signup_btn_text">Sign Up</string>
+    <string name="signin_btn_text">Sign In</string>
+    <string name="title_activity_home_screen">\u0020\u0020Home Screen</string>
+    <string name="title_activity_new_claim">\u0020\u0020File a New Claim</string>
+    <string name="title_activity_photo_shoot">Add Photos</string>
+    <string name="album_name">DamageDetection</string>
+    <string name="cannot">Cannot</string>
+    <string name="initial_shootphoto_btntext">Please Take Photos of Your Vehicle</string>
+    <string name="shootphoto_btntext">Add Another Photo</string>
+    <string name="submitphotos_btntext">Submit\u0020\u0020Photos</string>
+    <string name="title_activity_cars_list">\u0020\u0020Your Vehicles</string>
+    <string name="carslist_title">Please select the vehicle:</string>
+    <string name="title_activity_take_photos">\u0020\u0020Take Photos</string>
+    <string name="photo_take_title">Please choose the vehicle view:\u0020</string>
+    <string name="photo_take_title_angles">\u0020 from the below angles:</string>
+    <string name="title_activity_add_more_photos">\u0020\u0020AddMorePhotos</string>
+    <string name="title_activity_emergency_contacts">\u0020\u0020Emergency Contacts</string>
+    <string name="call911_btn_txt">Call 911</string>
+    <string name="hotline_btn_txt">AIG Hot Line</string>
+    <string name="title_activity_about_aig">\u0020\u0020About AIG</string>
+    <string name="callus_btn_txt">Call Us</string>
+    <string name="emailus_btn_txt">Email Us</string>
+    <string name="visitus_btn_txt">Visit Our Website</string>
+    <string name="about_btn_txt">About AIG</string>
+    <string name="title_activity_near_by_shops">\u0020\u0020Nearby Repair Shops</string>
+    <string name="map_view">Map</string>
+    <string name="view_as_list">List</string>
+    <string name="refresh_network_btn_txt">Retry</string>
+    <string name="no_network_txtview_txt">Check your connection and try again.</string>
+
+    <string name="call_shop_btn_txt">Call this shop</string>
+    <string name="navigate_to_shop_btn_txt">Navigate to this shop</string>
+
+
+    <string name="login">Login</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password: </string>
+    <string name="cancel_text">Cancel</string>
+    <string name="registration">Registration</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="policy_no">Policy No:</string>
+    <string name="submit">Submit</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="phone_no">Phone:</string>
+    <string name="address">Address:</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="city_state_zip">City, State, Zip</string>
+    <string name="email_id">Email:</string>
+    <string name="vehicle_details">Vehicle Details</string>
+    <string name="make">Make:</string>
+    <string name="model">Model:</string>
+    <string name="color">Color:</string>
+    <string name="type">Type:</string>
+    <string name="license_plate">License #:</string>
+    <string name="vin">VIN:</string>
+    <string name="policy_details">Policy Details</string>
+    <string name="createLoginDetails">Create Login</string>
+    <string name="confirm_password">Confirm Password:</string>
+    <string name="inputcode">\u0020\u0020Input Registration Code</string>
+    <string name="inputregcode">Code</string>
+    <string name="add_policy">Add Policy</string>
+    <string name="sign_up_txtview_txt"><a>Sign Up?</a></string>
+
+    <string name="button_use_camera">Use Camera</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="button_capture_text">SNAP</string>
+    <string name="content_desc_overlay">overlay</string>
+    <string name="content_desc_image_just_taken">Image just taken</string>
+    <string name="check_email_txtview_string">Please check your email to find the code.</string>
+    <string name="title_activity_myprofile">\u0020\u0020My Profile</string>
+    <string name="title_activity_my_claims">\u0020\u0020My Claims</string>
+    <string name="edit_my_profile">Edit</string>
+    <string name="no_policy_button_txt">Add Policy</string>
+    <string name="carlist_no_policy_txtview_txt">No policy! please click the below button to add your policies firstly. </string>
+
+    <string name="back_to_home_actionbar_txt">Home</string>
+    <string name="edit_policy_actionbar_txt">Edit</string>
+    <string name="delete_policy_actionbar_txt">Delete</string>
+
+    <!--> For DD3D <!-->
+    <string name="carparts_window">Parts</string>
+    <string name="btn_finish_photo_take_txt">Cancel</string>title_activity_cars_list
+    <string name="btn_submit_photos_txt">Submit Photos</string>
+    <string name="title_activity_dd3d">Take Photos</string>
+    <string name="description_close_button">Close</string>
+    <string name="description_photo_take_button">Take a photo</string>
+    <string name="menu_phototake_backtohome">Home</string>
+
+    <string name="menu_phototake_swithview_wholecar">2D Car</string>
+    <string name="menu_phototake_swithview_globalcar">3D Car</string>
+    <string name="menu_phototake_showaslist">Car Parts</string>
+
+    <string name = "popup_select_shooting_views_txtview_string">Please take photos of damaged parts of your car : </string>
+
+    <string name="shoot_views_3dmodel">3d Model</string>
+    <string name="shoot_views_partslist">Parts List</string>
+    <string name="shoot_views_vehicleview">Vehicle Views</string>
+    <string-array name="shoot_views">
+        <item>@string/shoot_views_3dmodel</item>
+        <item>@string/shoot_views_partslist</item>
+        <item>@string/shoot_views_vehicleview</item>
+    </string-array>
+
+    <string name = "popup_carparts_txtview_string">Please select a part from :</string>
+
+</resources>

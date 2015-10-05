@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cars_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_newclaim"
+    android:orientation="vertical"
+
+    tools:context="com.aig.science.damagedetection.controllers.NewClaimCarsListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/listview_border"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/select_policy_txtview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="20dp"
+            android:text="@string/carslist_title"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <ListView
+            android:id="@+id/carlist_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/newsfeed_divider"
+            android:fadingEdge="none"
+            android:layout_marginBottom="10dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbars="horizontal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/darker_gray"
+            android:paddingBottom="20dp" />
+
+        <LinearLayout
+            android:id="@+id/carlist_no_policy_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/carlist_no_policy_txtview"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/carlist_no_policy_txtview_txt"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/no_policy_button"
+                style="@style/car_buttonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:onClick="onClick"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/no_policy_button_txt" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

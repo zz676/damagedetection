@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_mypolicies"
+    android:orientation="vertical">
+    
+
+    <RelativeLayout
+        android:id="@+id/dashboard_list_relID"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/listview_border"
+        android:layout_height="match_parent">
+    	
+        <ListView 
+            android:id="@+id/policy_detail_list_id"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+	        android:cacheColorHint="@color/white"
+	        android:listSelector="@drawable/selectorlist" 
+	        android:fadingEdge="none"
+	        android:divider="@drawable/newsfeed_divider">
+        </ListView>
+        
+    </RelativeLayout>
+</RelativeLayout>

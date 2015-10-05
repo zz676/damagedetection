@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.aig.science.damagedetection.controllers.MyProfileActivity">
+
+    <item
+        android:id="@+id/switch_edit_btn"
+        android:icon="@drawable/ic_action_edit"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/view_as_list" />
+</menu>

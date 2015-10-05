@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.aig.science.damagedetection.controllers.DD3DActivity">
+    <item
+        android:id="@+id/action_carparts"
+        android:icon="@drawable/ic_action_view_as_list"
+        android:orderInCategory="100"
+        android:title="@string/carparts_window"
+        android:showAsAction="always|withText" />
+</menu>

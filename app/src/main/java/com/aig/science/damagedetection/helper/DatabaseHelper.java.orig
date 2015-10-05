@@ -1,0 +1,440 @@
+package com.aig.science.damagedetection.helper;
+
+import java.util.ArrayList;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import com.aig.science.damagedetection.models.Claims;
+import com.aig.science.damagedetection.models.PolicyInfo;
+import com.aig.science.damagedetection.models.PolicyMaster;
+import com.aig.science.damagedetection.models.UserInfo;
+
+public class DatabaseHelper extends SQLiteOpenHelper {
+
+    // Log
+    private static final String LOG = "DatabaseHelper";
+
+    // Database Version
+    private static final int DATABASE_VERSION = 1;
+
+    // Database Name
+    private static final String DATABASE_NAME = "DamageDetection";
+
+    public DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    // Table Names
+    private static final String TABLE_USER_INFO = "USER_INFO";
+    private static final String TABLE_VEHICLE_INFO = "VEHICLE_INFO";
+    private static final String TABLE_POLICY_INFO = "POLICY_INFO";
+    private static final String TABLE_POLICY_MASTER = "POLICY_MASTER";
+    private static final String TABLE_CLAIMS = "CLAIMS";
+    private static final String TABLE_IMAGE_DETAILS = "IMAGE_DETAILS";
+
+    // Common column names
+    private static final String KEY_ID = "id";
+
+    // USER INFO Table - column names
+    private static final String KEY_USER_ID = "user_id";
+    private static final String KEY_FIRST_NAME = "first_name";
+    private static final String KEY_LAST_NAME = "last_name";
+    private static final String KEY_PHONE_NO = "phone_no";
+    private static final String KEY_EMAIL_ID = "email_id";
+    private static final String KEY_ADDRESS = "address";
+    private static final String KEY_USERNAME = "username";
+    private static final String KEY_PASSWORD = "password";
+
+    // vehicle info Table - column names
+    private static final String KEY_VEHICLE_ID = "vehicle_id";
+    private static final String KEY_MAKE = "make";
+    private static final String KEY_MODEL = "model";
+    private static final String KEY_COLOR = "color";
+    private static final String KEY_LICENSE_NO = "license_no";
+    private static final String KEY_VIN = "vin";
+
+    // policy info Table - column names
+    private static final String KEY_POLICY_ID = "policy_id";
+    private static final String KEY_POLICY_NO = "policy_no";
+
+    //CLAIMS TABLE- COLUMN NAMES
+    private static final String KEY_CLAIM_ID = "claim_id";
+    private static final String KEY_COST = "cost";
+    private static final String KEY_COMMENTS = "comments";
+
+    //image details - column names
+    private static final String KEY_IMAGE_ID = "image_id";
+    private static final String KEY_IMAGE_URI = "image_uri";
+
+
+    //user_info table create statement
+    private static final String CREATE_USER_INFO = "CREATE TABLE IF NOT EXISTS "
+            + TABLE_USER_INFO + "("
+            + KEY_USER_ID + " TEXT PRIMARY KEY,"
+            + KEY_FIRST_NAME + " TEXT,"
+            + KEY_LAST_NAME + " TEXT,"
+            + KEY_PHONE_NO + " TEXT,"
+            + KEY_EMAIL_ID + " TEXT,"
+            + KEY_ADDRESS + " TEXT,"
+            + KEY_USERNAME + " TEXT,"
+            + KEY_PASSWORD + " TEXT"
+            + ")";
+
+
+    private static final String CREATE_POLICY_INFO = "CREATE TABLE IF NOT EXISTS "
+            + TABLE_POLICY_INFO + "("
+            + KEY_USER_ID + " TEXT REFERENCES " + TABLE_USER_INFO + "(" + KEY_USER_ID + "),"
+            + KEY_POLICY_ID + " TEXT PRIMARY KEY,"
+            + KEY_POLICY_NO + " TEXT,"
+            + KEY_MAKE + " TEXT,"
+            + KEY_MODEL + " TEXT,"
+            + KEY_COLOR + " TEXT,"
+            + KEY_LICENSE_NO + " TEXT,"
+            + KEY_VIN + " TEXT"
+            + ")";
+    /*
+
+        private static final String CREATE_POLICY_INFO = "CREATE TABLE IF NOT EXISTS "
+                    + TABLE_POLICY_INFO + "("
+                    + KEY_USER_ID + " TEXT REFERENCES " + TABLE_USER_INFO + "(" + KEY_USER_ID + "),"
+                    + KEY_POLICY_ID + " INTEGER PRIMARY KEY,"
+                    + KEY_POLICY_NO + " TEXT"
+                    + ")";
+        */
+    private static final String CREATE_POLICY_MASTER = "CREATE TABLE IF NOT EXISTS "
+            + TABLE_POLICY_MASTER + "("
+            + KEY_POLICY_NO + " TEXT,"
+            + KEY_MAKE + " TEXT,"
+            + KEY_MODEL + " TEXT,"
+            + KEY_COLOR + " TEXT,"
+            + KEY_LICENSE_NO + " TEXT,"
+            + KEY_VIN + " TEXT,"
+            + KEY_FIRST_NAME + " TEXT,"
+            + KEY_LAST_NAME + " TEXT,"
+            + KEY_PHONE_NO + " TEXT,"
+            + KEY_EMAIL_ID + " TEXT,"
+            + KEY_ADDRESS + " TEXT"
+            + ")";
+    private static final String CREATE_CLAIMS = "CREATE TABLE IF NOT EXISTS "
+            + TABLE_CLAIMS + "("
+            + KEY_USER_ID + " TEXT REFERENCES " + TABLE_USER_INFO + "(" + KEY_USER_ID + "),"
+            + KEY_POLICY_ID + " TEXT REFERENCES " + TABLE_POLICY_INFO + "(" + KEY_POLICY_ID + "),"
+            + KEY_VEHICLE_ID + " TEXT REFERENCES " + TABLE_VEHICLE_INFO + "(" + KEY_VEHICLE_ID + "),"
+            + KEY_CLAIM_ID + " TEXT PRIMARY KEY,"
+            + KEY_POLICY_NO + " TEXT"
+            + ")";
+
+    private static final String CREATE_IMAGE_DETAILS = "CREATE TABLE IF NOT EXISTS "
+            + TABLE_IMAGE_DETAILS + "("
+            + KEY_CLAIM_ID + " TEXT REFERENCES " + TABLE_CLAIMS + "(" + KEY_CLAIM_ID + "),"
+            + KEY_IMAGE_ID + " TEXT PRIMARY KEY,"
+            + KEY_IMAGE_URI + " TEXT"
+            + ")";
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // TODO Auto-generated method stub
+        db.execSQL(CREATE_USER_INFO);
+        db.execSQL(CREATE_POLICY_INFO);
+        //db.execSQL(CREATE_VEHICLE_INFO);
+        db.execSQL(CREATE_POLICY_MASTER);
+        db.execSQL(CREATE_CLAIMS);
+        db.execSQL(CREATE_IMAGE_DETAILS);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // TODO Auto-generated method stub
+        db.execSQL("DROP TABLE IF EXISTS " + CREATE_USER_INFO);
+        db.execSQL("DROP TABLE IF EXISTS " + CREATE_POLICY_INFO);
+        //db.execSQL("DROP TABLE IF EXISTS " + CREATE_VEHICLE_INFO);
+        db.execSQL("DROP TABLE IF EXISTS " + CREATE_POLICY_MASTER);
+        db.execSQL("DROP TABLE IF EXISTS " + CREATE_CLAIMS);
+        db.execSQL("DROP TABLE IF EXISTS " + CREATE_IMAGE_DETAILS);
+        onCreate(db);
+    }
+
+    public void createPolicyMaster(PolicyMaster policyMaster) {
+        // TODO Auto-generated method stub
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_POLICY_NO, policyMaster.getPolicyNo());
+        values.put(KEY_MAKE, policyMaster.getMake());
+        values.put(KEY_MODEL, policyMaster.getModel());
+        values.put(KEY_COLOR, policyMaster.getColor());
+        values.put(KEY_LICENSE_NO, policyMaster.getLicenseNo());
+        values.put(KEY_VIN, policyMaster.getVin());
+        values.put(KEY_FIRST_NAME, policyMaster.getFirstName());
+        values.put(KEY_LAST_NAME, policyMaster.getLastName());
+        values.put(KEY_PHONE_NO, policyMaster.getPhoneNo());
+        values.put(KEY_ADDRESS, policyMaster.getAddress());
+        values.put(KEY_EMAIL_ID, policyMaster.getEmailId());
+
+        long trip_id = db.insert(TABLE_POLICY_MASTER, null, values);
+
+    }
+
+    public void createUserInfo(UserInfo userInfo) {
+        // TODO Auto-generated method stub
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_USER_ID, userInfo.getUserId());
+        values.put(KEY_FIRST_NAME, userInfo.getFirstName());
+        values.put(KEY_LAST_NAME, userInfo.getLastName());
+        values.put(KEY_PHONE_NO, userInfo.getPhoneNo());
+        values.put(KEY_ADDRESS, userInfo.getAddress());
+        values.put(KEY_EMAIL_ID, userInfo.getEmailId());
+
+        db.insert(TABLE_USER_INFO, null, values);
+
+    }
+
+    public void insertLoginInfo(UserInfo userInfo) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String queryString =
+                "SELECT * FROM " + TABLE_USER_INFO + " WHERE user_id = ? ";
+
+        String[] whereArgs = new String[]{
+                KEY_USER_ID
+        };
+
+
+        Cursor cursor = db.rawQuery(queryString, whereArgs);
+        if (cursor.moveToFirst()) {
+            do {
+                cursor.getColumnIndexOrThrow(KEY_USER_ID);
+            } while (cursor.moveToNext());
+        }
+
+        String[] whereArg = new String[]{userInfo.getUserId()};
+
+        if (cursor != null && !cursor.isClosed()) {
+            cursor.close();
+        }
+
+        ContentValues val = new ContentValues();
+        val.put(KEY_USERNAME, userInfo.getUsername());
+        val.put(KEY_PASSWORD, userInfo.getPassword());
+
+        db.update(TABLE_USER_INFO, val, "user_id = ?", whereArg);
+    }
+
+
+    public boolean validateUser(String userNameStr, String passwordStr) {
+        // TODO Auto-generated method stub
+        String selectQuery = "SELECT " + KEY_USERNAME + " , " + KEY_PASSWORD + " FROM " + TABLE_USER_INFO + " where " + KEY_USERNAME + " = '"
+                + userNameStr + "' and " + KEY_PASSWORD + " = '" + passwordStr + "'";
+        boolean isValidUser = false;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        try {
+            if (cursor.moveToFirst()) {
+                isValidUser = true;
+            }
+        } finally {
+            cursor.close();
+        }
+        return isValidUser;
+    }
+
+    public int getNoOfPolicies(String userId) {
+        int numberOfPolicies = 0;
+        String selectQuery = "SELECT  count(*) FROM " + TABLE_POLICY_INFO + " where " + KEY_USER_ID + " = '"
+                + userId + "'";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        try {
+            if (cursor.moveToFirst()) {
+                numberOfPolicies = cursor.getInt(0);
+            }
+        } finally {
+            cursor.close();
+        }
+        return numberOfPolicies;
+    }
+
+    public void createPolicyInfo(PolicyInfo policyInfo) {
+        // TODO Auto-generated method stub
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_USER_ID, policyInfo.getUserId());
+        values.put(KEY_POLICY_ID, policyInfo.getPolicyId());
+        values.put(KEY_POLICY_NO, policyInfo.getPolicyNo());
+        values.put(KEY_MAKE, policyInfo.getMake());
+        values.put(KEY_MODEL, policyInfo.getModel());
+        values.put(KEY_COLOR, policyInfo.getColor());
+        values.put(KEY_LICENSE_NO, policyInfo.getLicenseNo());
+        values.put(KEY_VIN, policyInfo.getVin());
+        db.insert(TABLE_POLICY_INFO, null, values);
+    }
+
+    public ArrayList<PolicyInfo> getPolicyDetails() {
+        // TODO Auto-generated method stub
+        String selectQuery = "SELECT  * FROM " + TABLE_POLICY_INFO;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        ArrayList<PolicyInfo> policyList = new ArrayList<PolicyInfo>();
+        if (cursor.moveToFirst()) {
+            do {
+                PolicyInfo policyInfo = new PolicyInfo();
+                policyInfo.setUserId(cursor.getString(0));
+                policyInfo.setPolicyId(cursor.getString(1));
+                policyInfo.setPolicyNo(cursor.getString(2));
+                policyInfo.setMake(cursor.getString(3));
+                policyInfo.setModel(cursor.getString(4));
+                policyInfo.setColor(cursor.getString(5));
+                policyInfo.setLicenseNo(cursor.getString(6));
+                policyInfo.setVin(cursor.getString(7));
+                policyList.add(policyInfo);
+            } while (cursor.moveToNext());
+        }
+        return policyList;
+    }
+    public ArrayList<PolicyInfo> getPolicyDetailsForUserID(String userID) {
+        // TODO Auto-generated method stub
+        String selectQuery = "SELECT  * FROM " + TABLE_POLICY_INFO + " where " + KEY_USER_ID + " = '"
+                + userID + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        ArrayList<PolicyInfo> policyList = new ArrayList<PolicyInfo>();
+        if (cursor.moveToFirst()) {
+            do {
+                PolicyInfo policyInfo = new PolicyInfo();
+                policyInfo.setUserId(cursor.getString(0));
+                policyInfo.setPolicyId(cursor.getString(1));
+                policyInfo.setPolicyNo(cursor.getString(2));
+                policyInfo.setMake(cursor.getString(3));
+                policyInfo.setModel(cursor.getString(4));
+                policyInfo.setColor(cursor.getString(5));
+                policyInfo.setLicenseNo(cursor.getString(6));
+                policyInfo.setVin(cursor.getString(7));
+                policyList.add(policyInfo);
+            } while (cursor.moveToNext());
+        }
+        return policyList;
+    }
+
+    public Boolean deletePolicy(String userID, String policyID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_POLICY_INFO, KEY_USER_ID + " = '" + userID + "' and " + KEY_POLICY_ID + " = '" + policyID + "'", null) > 0;
+    }
+
+    public void editPolicyInfo(PolicyInfo policyInfo) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String queryString =
+                "SELECT * FROM " + TABLE_POLICY_INFO + " WHERE user_id = ? and policy_id = ?";
+
+        String[] whereArgs = new String[]{
+                KEY_USER_ID, KEY_POLICY_ID
+        };
+
+        Cursor cursor = db.rawQuery(queryString, whereArgs);
+        if (cursor.moveToFirst()) {
+            do {
+                cursor.getColumnIndexOrThrow(KEY_USER_ID);
+                cursor.getColumnIndexOrThrow(KEY_POLICY_ID);
+            } while (cursor.moveToNext());
+        }
+        String[] whereArg = new String[]{policyInfo.getUserId(), policyInfo.getPolicyId()};
+
+        if (cursor != null && !cursor.isClosed()) {
+            cursor.close();
+        }
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_POLICY_NO, policyInfo.getPolicyNo());
+        values.put(KEY_MAKE, policyInfo.getMake());
+        values.put(KEY_MODEL, policyInfo.getModel());
+        values.put(KEY_COLOR, policyInfo.getColor());
+        values.put(KEY_LICENSE_NO, policyInfo.getLicenseNo());
+        values.put(KEY_VIN, policyInfo.getVin());
+        db.update(TABLE_POLICY_INFO, values, "user_id = ? and policy_id = ? ", whereArg);
+    }
+
+    public UserInfo getuserDetailsDetails(String userID) {
+        // TODO Auto-generated method stub
+        String selectQuery = "SELECT  * FROM " + TABLE_USER_INFO + " where " + KEY_USER_ID + " = '"
+                + userID + "'";
+        ;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        UserInfo userInfo = null;
+        if (cursor.moveToFirst()) {
+            do {
+                userInfo = new UserInfo();
+                userInfo.setUserId(cursor.getString(0));
+                userInfo.setFirstName(cursor.getString(1));
+                userInfo.setLastName(cursor.getString(2));
+                userInfo.setPhoneNo(cursor.getString(3));
+                userInfo.setEmailId(cursor.getString(4));
+                userInfo.setAddress(cursor.getString(5));
+            } while (cursor.moveToNext());
+        }
+        return userInfo;
+    }
+
+    public void editUserInfo(UserInfo userInfo) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String queryString =
+                "SELECT * FROM " + TABLE_USER_INFO + " WHERE user_id = ? ";
+
+        String[] whereArgs = new String[]{
+                KEY_USER_ID
+        };
+
+        Cursor cursor = db.rawQuery(queryString, whereArgs);
+        if (cursor.moveToFirst()) {
+            do {
+                cursor.getColumnIndexOrThrow(KEY_USER_ID);
+            } while (cursor.moveToNext());
+        }
+        String[] whereArg = new String[]{userInfo.getUserId()};
+
+        if (cursor != null && !cursor.isClosed()) {
+            cursor.close();
+        }
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_FIRST_NAME, userInfo.getFirstName());
+        values.put(KEY_LAST_NAME, userInfo.getLastName());
+        values.put(KEY_EMAIL_ID, userInfo.getEmailId());
+        values.put(KEY_PHONE_NO, userInfo.getPhoneNo());
+        values.put(KEY_ADDRESS, userInfo.getAddress());
+        db.update(TABLE_USER_INFO, values, "user_id = ? ", whereArg);
+    }
+
+    public ArrayList<Claims> getClaims(String userID) {
+
+        // TODO Auto-generated method stub
+        String selectQuery = "SELECT  * FROM " + TABLE_CLAIMS + " where " + KEY_USER_ID + " = '"
+                + userID + "'";
+        ;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        ArrayList<Claims> claimsArrayList = new ArrayList<Claims>();
+        Claims claims = null;
+        if (cursor.moveToFirst()) {
+            do {
+                claims = new Claims();
+                claims.setUserId(cursor.getString(0));
+                claims.setPolicyId(cursor.getString(1));
+                claims.setVehicleID(cursor.getString(2));
+               claimsArrayList.add(claims);
+            } while (cursor.moveToNext());
+        }
+        return claimsArrayList;
+    }
+}

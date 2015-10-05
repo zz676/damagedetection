@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="30dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_gravity="center_vertical"
+    android:gravity="bottom"
+    android:background="@drawable/background_about_aig"
+    tools:context="com.aig.science.damagedetection.controllers.AboutAIGActivity">
+
+    <Button
+        android:id="@+id/callus_btn"
+        style="@style/generalButtonStyle"
+        android:onClick="onClick"
+        android:text="@string/callus_btn_txt" />
+
+    <Button
+        android:id="@+id/emailus_btn"
+        style="@style/generalButtonStyle"
+
+        android:onClick="onClick"
+        android:text="@string/emailus_btn_txt" />
+
+    <Button
+        android:id="@+id/visitus_btn"
+        style="@style/generalButtonStyle"
+        android:onClick="onClick"
+        android:text="@string/visitus_btn_txt" />
+</LinearLayout>

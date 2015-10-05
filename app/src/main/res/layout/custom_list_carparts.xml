@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#40ffffff"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/textview_carpart_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="@color/black"
+        android:selectAllOnFocus="false"
+        android:textSize="16dp"
+        android:focusable="false"/>
+
+<!--    <CheckBox
+        android:id="@+id/checkbox_carpart_istaken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="15dp"
+        android:onClick="onCheckboxClicked" />-->
+    <ImageView
+        android:id="@+id/imgview_carpartphoto_take"
+        android:layout_margin="3dp"
+        android:layout_gravity="right|center_vertical"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:focusable="false"/>
+</FrameLayout>

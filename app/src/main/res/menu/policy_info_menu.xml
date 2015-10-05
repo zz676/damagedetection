@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.aig.science.damagedetection.controllers.PolicyInfoActivity">
+    <item
+        android:id="@+id/edit_policy"
+        android:icon="@drawable/ic_action_edit"
+        android:title="@string/edit_policy_actionbar_txt"
+        android:showAsAction="always" />
+    <item
+        android:id="@+id/delete_policy"
+        android:icon="@drawable/ic_action_discard"
+        android:title="@string/delete_policy_actionbar_txt"
+        android:showAsAction="always" />
+    <item
+        android:id="@+id/back_to_home"
+        android:icon="@drawable/ic_action_home"
+        android:title="@string/back_to_home_actionbar_txt"
+        android:showAsAction="ifRoom" />
+</menu>

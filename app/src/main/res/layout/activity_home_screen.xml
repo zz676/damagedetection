@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_home"
+    tools:context="com.aig.science.damagedetection.controllers.HomeScreenActivity"
+    >
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:columnCount="3"
+        android:rowCount="11"
+        android:layout_centerVertical="true"
+        android:useDefaultMargins="true">
+
+        <!--New Claim-->
+        <Button
+            android:id="@+id/newclaim_btn"
+            android:layout_width="220dp"
+            android:layout_height="100dp"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_row="0"
+            android:background="@drawable/home_button_border"
+            android:onClick="onClick"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="New Claim"></Button>
+
+        <!--My Claims-->
+        <Button
+            android:id="@+id/myclaims_btn"
+            android:layout_width="115dp"
+            android:layout_height="100dp"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:onClick="onClick"
+            android:background="@drawable/home_button_border"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="My Claims"></Button>
+
+        <!--My Policies-->
+        <Button
+            android:id="@+id/mypolicy_btn"
+            android:layout_width="115dp"
+            android:layout_height="150dp"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:layout_rowSpan="2"
+            android:background="@drawable/home_button_border"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:onClick="onClick"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="My Policies"></Button>
+
+        <!-- Repair Shops-->
+        <Button
+            android:id="@+id/newbyshops_btn"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_row="1"
+            android:background="@drawable/home_button_border"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:onClick="onClick"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Nearby Repair Shops"></Button>
+
+        <!--Emergency Contacts-->
+        <Button
+            android:id="@+id/emergencycontacts_btn"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_row="1"
+            android:background="@drawable/home_button_border"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:onClick="onClick"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:text="Emergency Contacts"></Button>
+
+        <!--My Profiles-->
+        <Button
+            android:id="@+id/myprofiles_btn"
+            android:layout_width="220dp"
+            android:layout_height="100dp"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_row="2"
+            android:layout_rowSpan="2"
+            android:background="@drawable/home_button_border"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:onClick="onClick"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="My Profile"></Button>
+
+        <!--aig_log0-->
+        <Button
+            android:id="@+id/about_aig_btn"
+            android:layout_width="115dp"
+            android:layout_height="100dp"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:scaleType="fitCenter"
+            android:background="@drawable/home_button_border"
+            android:padding="5dp"
+            android:onClick="onClick"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="About Us"
+             />
+    </GridLayout>
+</RelativeLayout>
+
+
+

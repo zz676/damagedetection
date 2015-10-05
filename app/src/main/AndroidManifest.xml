@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aig.science.damagedetection">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/aig_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/CustomActionBarTheme">
+        <activity
+            android:name=".controllers.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".controllers.HomeScreenActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="@string/title_activity_home_screen"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+<!--            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".controllers.NewClaimActivity"
+            android:label="@string/title_activity_new_claim"
+            android:parentActivityName=".controllers.HomeScreenActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="ACTION_MULTIPLE_PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aig.science.damagedetection.controllers.HomeScreenActivity" />
+        </activity>
+        <activity
+            android:name=".controllers.MyProfileActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="@string/title_activity_myprofile"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aig.science.damagedetection.controllers.HomeScreenActivity" />
+        </activity>
+        <activity
+            android:name=".controllers.NewClaimCarsListActivity"
+            android:label="@string/title_activity_cars_list"
+            android:parentActivityName=".controllers.HomeScreenActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aig.science.damagedetection.controllers.HomeScreenActivity" />
+        </activity>
+
+        <activity
+            android:name=".controllers.AddMorePhotosActivity"
+            android:label="@string/title_activity_add_more_photos"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="ACTION_MULTIPLE_PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".controllers.TakePhotosActivity"
+            android:label="@string/title_activity_take_photos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".controllers.EmergencyContactsActivity"
+            android:label="@string/title_activity_emergency_contacts"
+            android:parentActivityName=".controllers.HomeScreenActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aig.science.damagedetection.controllers.HomeScreenActivity" />
+        </activity>
+        <activity
+            android:name=".controllers.AboutAIGActivity"
+            android:label="@string/title_activity_about_aig"
+            android:parentActivityName=".controllers.HomeScreenActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aig.science.damagedetection.controllers.HomeScreenActivity" />
+        </activity>
+        <activity
+            android:name=".controllers.ClaimsListActivity"
+            android:label="@string/title_activity_my_claims"
+            android:parentActivityName=".controllers.HomeScreenActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aig.science.damagedetection.controllers.HomeScreenActivity" />
+        </activity>
+        <activity
+            android:name=".controllers.NearByShopsActivity"
+            android:label="@string/title_activity_near_by_shops"
+            android:parentActivityName=".controllers.HomeScreenActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aig.science.damagedetection.controllers.HomeScreenActivity" />
+        </activity>
+        <activity
+            android:name=".controllers.LoginActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="Login"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".controllers.RegistrationActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="Registration"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".controllers.PolicyInfoActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="Policy"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".controllers.SignUpActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="Create Login"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".controllers.InputRegistrationCodeActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="Input Registration Code"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".controllers.PolicyListActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="Policy List"
+            android:parentActivityName=".controllers.HomeScreenActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".controllers.CameraActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_camera"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.aig.science.damagedetection.controllers.ClaimSummaryActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="Claims Summary"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+
+        <activity
+            android:name="com.aig.science.damagedetection.controllers.ClaimCostActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="Claims Settlement"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+
+        <activity
+            android:name="com.aig.science.damagedetection.controllers.ClaimPhotoActivity"
+            android:icon="@drawable/aig_logo"
+            android:label="Claims Photos"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCTR7vwqzMyJjm8mhyJZ3rH8DPfk8gU-6o" />
+    </application>
+
+</manifest>

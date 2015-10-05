@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_mypolicy"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/policyinfo_fields_border">
+
+                <TextView
+
+                    style="@style/generalTextViewStyle"
+                    android:text="@string/policy_no" />
+
+                <EditText
+                    android:id="@+id/policyNoEditTextID"
+                    style="@style/generalEditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/linearlayoutfields_border">
+
+                <TextView
+
+                    style="@style/generalTextViewStyle"
+                    android:text="@string/make" />
+
+                <EditText
+                    android:id="@+id/makeEditTextID"
+                    style="@style/generalEditTextStyle" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/linearlayoutfields_border">
+
+                <TextView
+                    style="@style/generalTextViewStyle"
+                    android:text="@string/model" />
+
+                <EditText
+                    android:id="@+id/modelEditTextID"
+                    style="@style/generalEditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/linearlayoutfields_border">
+
+                <TextView
+                    style="@style/generalTextViewStyle"
+                    android:text="@string/color" />
+
+                <EditText
+                    android:id="@+id/colorEditTextID"
+                    style="@style/generalEditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/linearlayoutfields_border">
+
+                <TextView
+
+                    style="@style/generalTextViewStyle"
+                    android:text="@string/license_plate" />
+
+                <EditText
+                    android:id="@+id/licenseNoEditTextID"
+                    style="@style/generalEditTextStyle" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/linearlayoutfields_border">
+
+                <TextView
+                    style="@style/generalTextViewStyle"
+                    android:text="@string/vin" />
+
+                <EditText
+                    android:id="@+id/vinEditTextID"
+                    style="@style/generalEditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <Button
+                    android:id="@+id/submitBtnID"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="5"
+                    android:background="@drawable/custom_button"
+                    android:text="@string/submit"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/cancelBtnID"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="5"
+                    android:background="@drawable/custom_button"
+                    android:text="@string/cancel_text"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

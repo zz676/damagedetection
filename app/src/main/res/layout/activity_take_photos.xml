@@ -1,0 +1,195 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="com.aig.science.damagedetection.controllers.TakePhotosActivity">
+
+    <ViewSwitcher
+        android:id="@+id/phototake__viewswitcher"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="55dp"
+        android:layout_height="wrap_content">
+
+        <com.aig.science.dd3d.DD3DGLSurfaceView
+            android:id="@+id/phototake_gl_surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/listview_border"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/photo_take_title_txtview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="5dp"
+                android:text="@string/photo_take_title"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <GridLayout
+                android:id="@+id/cars_list_gridlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="3"
+                android:rowCount="3"
+                android:useDefaultMargins="true">
+
+                <!--Front Angle-->
+                <ImageButton
+                    android:id="@+id/front_angle_btn"
+                    style="@style/car_angle_buttonStyle"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tran_front"></ImageButton>
+
+                <!--Back Angle-->
+                <ImageButton
+                    android:id="@+id/back_angle_btn"
+                    style="@style/car_angle_buttonStyle"
+                    android:layout_column="1"
+                    android:layout_row="2"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tran_back"></ImageButton>
+
+                <!--left_side Angle-->
+                <ImageButton
+                    android:id="@+id/left_angle_btn"
+                    style="@style/car_angle_buttonStyle"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tran_left"></ImageButton>
+
+                <!--right_side Angle-->
+                <ImageButton
+                    android:id="@+id/right_angle_btn"
+                    style="@style/car_angle_buttonStyle"
+                    android:layout_column="2"
+                    android:layout_row="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tran_right"></ImageButton>
+
+                <!--middle empty button-->
+                <Space
+                    android:id="@+id/middle_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_column="1"
+                    android:layout_row="1"></Space>
+
+                <!--Front Right Angle-->
+                <ImageButton
+                    android:id="@+id/front_right_angle_btn"
+                    style="@style/car_angle_buttonStyle"
+                    android:layout_column="2"
+                    android:layout_row="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tran_right_front"></ImageButton>
+
+                <!--Front Left Angle-->
+                <ImageButton
+                    android:id="@+id/front_left_angle_btn"
+                    style="@style/car_angle_buttonStyle"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tran_left_front"></ImageButton>
+
+                <!--Back Left Angle-->
+                <ImageButton
+                    android:id="@+id/back_left_angle_btn"
+                    style="@style/car_angle_buttonStyle"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tran_left_back"></ImageButton>
+
+                <!--Back right Angle-->
+                <ImageButton
+                    android:id="@+id/back_right_angle_btn"
+                    style="@style/car_angle_buttonStyle"
+                    android:layout_column="2"
+                    android:layout_row="2"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tran_right_back"></ImageButton>
+            </GridLayout>
+
+            <FrameLayout
+                android:id="@+id/takephotos_framelayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:scrollbarAlwaysDrawVerticalTrack="true">
+
+                <org.lucasr.twowayview.TwoWayView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/twoway_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawSelectorOnTop="false"
+                    android:orientation="horizontal"
+                    tools:context=".TakePhotosActivity" />
+            </FrameLayout>
+        </LinearLayout>
+    </ViewSwitcher>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_submit_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_above="@id/cars_list_gridlayout"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:gravity="center"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/submit_photos_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_above="@id/cars_list_gridlayout"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:gravity="center"
+            android:text="@string/submitphotos_btntext"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</FrameLayout>

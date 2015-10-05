@@ -1,0 +1,141 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="generalTextViewStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="generalEditTextStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColorHighlight">@color/darkblue</item>
+        <item name="android:layout_weight">8</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="generalLinearLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/linearlayout_border</item>
+        <item name="android:weightSum">11</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="generalLinearLayoutFieldsStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">11</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="generalButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#00a4e4</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:layout_marginTop">80dp</item>
+    </style>
+
+    <style name="imageButtonStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">#00a4e4</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="car_buttonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:background">@drawable/custom_button</item>
+    </style>
+
+    <style name="car_angle_buttonStyle">
+        <item name="android:layout_width">105dp</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="android:background">@drawable/photo_take_outline_button</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="popup_window_buttonStyle">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TwoWayView">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="action_bar_theme" parent="@android:style/Theme.Holo">
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="CloseButton">
+        <item name="android:background">@drawable/close</item>
+        <item name="android:src">@drawable/close</item>
+        <item name="android:contentDescription">@string/description_close_button</item>
+    </style>
+
+    <style name="PhotoTakeButton">
+        <item name="android:background">@drawable/phototake</item>
+        <item name="android:src">@drawable/phototake</item>
+        <item name="android:contentDescription">@string/description_photo_take_button</item>
+    </style>
+
+</resources>

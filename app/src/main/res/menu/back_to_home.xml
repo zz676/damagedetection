@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.aig.science.damagedetection.controllers.ClaimSummaryActivity">
+
+    <item
+        android:id="@+id/back_to_home"
+        android:icon="@drawable/ic_action_home"
+        android:title="@string/back_to_home_actionbar_txt"
+        android:showAsAction="always" />
+</menu>

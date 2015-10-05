@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.aig.science.damagedetection.controllers.TakePhotosActivity" >
+    <item android:id="@+id/switch_takephoto_view_btn"
+        android:title="@string/menu_phototake_swithview_wholecar"
+        android:icon="@drawable/whole_car"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText" />
+    <item android:id="@+id/phototake_action_carparts_aslist"
+        android:title="@string/menu_phototake_showaslist"
+        android:icon="@drawable/ic_action_view_as_list"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText" />
+<!--    <item android:id="@+id/takephoto_back_to_home"
+        android:title="@string/menu_phototake_backtohome"
+        android:icon="@drawable/ic_action_home"
+        android:orderInCategory="100"
+        android:showAsAction="never" />-->
+</menu>

@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="30dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="bottom"
+    android:background="@drawable/background_emerygency_contacts"
+    tools:context="com.aig.science.damagedetection.controllers.EmergencyContactsActivity">
+
+    <Button
+        android:id="@+id/call99_btn"
+        style="@style/generalButtonStyle"
+        android:text="@string/call911_btn_txt" />
+
+    <Button
+        android:id="@+id/hotline_btn"
+        style="@style/generalButtonStyle"
+        android:text="@string/hotline_btn_txt" />
+
+</LinearLayout>

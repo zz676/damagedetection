@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_claim_summary"
+    android:orientation="vertical">
+
+    <GridView
+        android:id="@+id/gridview"
+        style="@style/generalLinearLayoutFieldsStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:columnWidth="150dp"
+        android:gravity="center"
+        android:horizontalSpacing="5dp"
+        android:paddingTop="15dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:stretchMode="columnWidth"></GridView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/listview_border"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <ImageButton
+            android:id="@+id/footer_summary_btnId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/listview_border"
+            android:src="@drawable/ic_action_view_as_list" />
+
+        <ImageButton
+            android:id="@+id/footer_cost_btnId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/listview_border"
+            android:src="@drawable/dollar" />
+
+        <ImageButton
+            android:id="@+id/footer_photos_btnId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/listview_border"
+            android:src="@drawable/ic_action_picture" />
+    </LinearLayout>
+</RelativeLayout>
